@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyen Van Tuan Anh</title>
+<meta name="description" content="Nguyen Van Tuan Anh (Daniel Nguyen) — Master's student in Commerce at Plekhanov Russian University of Economics, e-commerce and marketplace specialist.">
+<meta property="og:title" content="Nguyen Van Tuan Anh — E-commerce & Marketplaces">
+<meta property="og:description" content="Master's student at Plekhanov Russian University of Economics (Moscow). Marketplace experience at Tiki and ShopeeFood, six years running small businesses.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://danielnguyen-vn.github.io/">
+<meta property="og:image" content="https://danielnguyen-vn.github.io/assets/photo.jpg">
+<link rel="canonical" href="https://danielnguyen-vn.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap&subset=vietnamese,cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#1b2433; --muted:#5b6575; --line:#e3e1da;
+  --navy:#17304f; --gold:#b98a2f; --gold-soft:#f4ead6; --chip:#eef1f5;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10151d; --surface:#171e29; --ink:#e7ebf1; --muted:#9aa5b4; --line:#273142;
+    --navy:#9fbce0; --gold:#d9ad55; --gold-soft:#2a2414; --chip:#202a38;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10151d; --surface:#171e29; --ink:#e7ebf1; --muted:#9aa5b4; --line:#273142;
+  --navy:#9fbce0; --gold:#d9ad55; --gold-soft:#2a2414; --chip:#202a38;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy);text-underline-offset:3px}
+h1,h2,h3{font-family:"Noto Serif",Georgia,serif;color:var(--navy);line-height:1.25;margin:0}
+
+/* language visibility */
+html[data-lang="en"] [data-l]:not([data-l="en"]),
+html[data-lang="vi"] [data-l]:not([data-l="vi"]),
+html[data-lang="ru"] [data-l]:not([data-l="ru"]){display:none}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.bar nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none}
+.bar nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+.bar nav a:hover{color:var(--ink)}
+.langs{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;padding:2px;flex-shrink:0}
+.langs button{border:0;background:none;color:var(--muted);font:600 12px Inter,sans-serif;padding:5px 10px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--navy);color:var(--bg)}
+
+/* hero */
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:168px 1fr;gap:36px;align-items:center}
+.photo{width:168px;height:168px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);background:#fff}
+.hero h1{font-size:38px}
+.alias{color:var(--muted);font-size:15px;margin-top:4px}
+.role{color:var(--gold);font-weight:600;font-size:17px;margin-top:10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;color:var(--muted);font-size:14px}
+.meta > span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:middle}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--navy)}
+.btn.primary{background:var(--navy);color:var(--bg)}
+.btn.ghost{color:var(--navy)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:8px}
+.stat{background:var(--surface);padding:18px 16px}
+.stat b{display:block;font:700 26px "Noto Serif",Georgia,serif;color:var(--navy)}
+.stat small{color:var(--muted);font-size:13px;line-height:1.4;display:block}
+
+/* sections */
+section{padding:44px 0 8px;scroll-margin-top:64px}
+section > h2{font-size:24px;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+section > h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.lead p{margin:0 0 12px;font-size:17px}
+
+.item{position:relative;padding:0 0 26px 26px;border-left:2px solid var(--line);margin-left:6px}
+.item:last-child{padding-bottom:4px}
+.item::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--gold)}
+.item h3{font-size:18px}
+.item .org{font-weight:600;color:var(--ink)}
+.item .when{color:var(--muted);font-size:14px;margin:2px 0 8px}
+.item ul{margin:0;padding-left:18px}
+.item li{margin:3px 0}
+.tag{display:inline-block;background:var(--gold-soft);color:var(--gold);font-size:12px;font-weight:600;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:2px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.card + .card{margin-top:14px}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{margin:0 0 10px;color:var(--ink)}
+.card ul{margin:0;padding-left:18px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--chip);border-radius:999px;padding:6px 12px;font-size:14px}
+.lang-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.lang-row:last-child{border-bottom:0}
+.lang-row span:last-child{color:var(--muted);text-align:right;font-size:14px}
+
+.contact{text-align:center;padding:48px 0 32px}
+.contact p{color:var(--muted);max-width:560px;margin:8px auto 20px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:20px 0 36px;text-align:center}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;text-align:center;gap:20px;padding-top:36px}
+  .photo{margin:0 auto;width:140px;height:140px}
+  .hero h1{font-size:30px}
+  .meta,.cta{justify-content:center}
+  .stats{grid-template-columns:1fr 1fr}
+  .grid2{grid-template-columns:1fr}
+  .bar nav{display:none}
+  .wrap{padding:0 16px}
+}
+@media print{
+  .bar,.cta,.langs{display:none}
+  body{background:#fff;font-size:12px}
+  section{padding-top:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#about"><span data-l="en">About</span><span data-l="vi">Giới thiệu</span><span data-l="ru">Обо мне</span></a>
+      <a href="#experience"><span data-l="en">Experience</span><span data-l="vi">Kinh nghiệm</span><span data-l="ru">Опыт</span></a>
+      <a href="#education"><span data-l="en">Education</span><span data-l="vi">Học vấn</span><span data-l="ru">Образование</span></a>
+      <a href="#projects"><span data-l="en">Projects</span><span data-l="vi">Dự án</span><span data-l="ru">Проекты</span></a>
+      <a href="#skills"><span data-l="en">Skills</span><span data-l="vi">Kỹ năng</span><span data-l="ru">Навыки</span></a>
+      <a href="#contact"><span data-l="en">Contact</span><span data-l="vi">Liên hệ</span><span data-l="ru">Контакты</span></a>
+    </nav>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-set="en">EN</button>
+      <button type="button" data-set="vi">VI</button>
+      <button type="button" data-set="ru">RU</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <img class="photo" src="assets/photo.jpg" alt="Nguyen Van Tuan Anh">
+    <div>
+      <h1><span data-l="en">Nguyen Van Tuan Anh</span><span data-l="vi">Nguyễn Văn Tuấn Anh</span><span data-l="ru">Нгуен Ван Туан Ань</span></h1>
+      <div class="alias"><span data-l="en">Also known as Daniel Nguyen</span><span data-l="vi">Bút danh: Daniel Nguyễn</span><span data-l="ru">Также известен как Даниэль Нгуен</span></div>
+      <div class="role">
+        <span data-l="en">Master's student in Commerce · E-commerce &amp; Marketplace Specialist</span>
+        <span data-l="vi">Học viên thạc sĩ Kinh doanh thương mại · Chuyên viên thương mại điện tử</span>
+        <span data-l="ru">Магистрант («Торговое дело») · Специалист по электронной коммерции и маркетплейсам</span>
+      </div>
+      <div class="meta">
+        <span><span data-l="en">Moscow, Russia</span><span data-l="vi">Moskva, Nga</span><span data-l="ru">Москва, Россия</span></span>
+        <span><span data-l="en">Plekhanov Russian University of Economics</span><span data-l="vi">Đại học Kinh tế Plekhanov</span><span data-l="ru">РЭУ им. Г. В. Плеханова</span></span>
+        <span><span data-l="en">Russian Government Scholarship</span><span data-l="vi">Học bổng Chính phủ Nga</span><span data-l="ru">Квота Правительства РФ</span></span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="mailto:anhnguyen.nvt1@gmail.com"><span data-l="en">Email me</span><span data-l="vi">Gửi email</span><span data-l="ru">Написать</span></a>
+        <a class="btn ghost" href="#experience"><span data-l="en">View experience</span><span data-l="vi">Xem kinh nghiệm</span><span data-l="ru">Смотреть опыт</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>~2</b><small><span data-l="en">years on the seller side at Tiki and ShopeeFood</span><span data-l="vi">năm làm việc cùng nhà bán hàng tại Tiki và ShopeeFood</span><span data-l="ru">года работы с продавцами в Tiki и ShopeeFood</span></small></div>
+    <div class="stat"><b>~6</b><small><span data-l="en">years running my own small businesses</span><span data-l="vi">năm tự kinh doanh</span><span data-l="ru">лет собственного малого бизнеса</span></small></div>
+    <div class="stat"><b>300+</b><small><span data-l="en">sellers onboarded to Tiki</span><span data-l="vi">nhà bán hàng được đưa lên Tiki</span><span data-l="ru">продавцов подключено к Tiki</span></small></div>
+    <div class="stat"><b>3.36</b><small><span data-l="en">GPA / 4.0, BBA with distinction</span><span data-l="vi">GPA / 4.0, cử nhân loại Giỏi</span><span data-l="ru">GPA / 4.0, бакалавр с отличием</span></small></div>
+  </div>
+
+  <section id="about" class="lead">
+    <h2><span data-l="en">About</span><span data-l="vi">Giới thiệu</span><span data-l="ru">Обо мне</span></h2>
+    <div data-l="en">
+      <p>I am a Vietnamese master's student at Plekhanov Russian University of Economics in Moscow, studying Commerce on a Russian Government Scholarship in a full-time, Russian-taught programme.</p>
+      <p>Before moving to Russia I spent about two years working with sellers on two of Vietnam's leading platforms, Foody/ShopeeFood and Tiki, where I signed and onboarded partners, managed top sellers and met my KPIs every month. Alongside that, I spent around six years running my own small businesses: a restaurant, a shoe store and several online shops.</p>
+      <p>Today I focus on e-commerce in Russia. Under the name <strong>Daniel Nguyen</strong>, I write practical guides that help Vietnamese entrepreneurs sell on Ozon and other Russian marketplaces.</p>
+    </div>
+    <div data-l="vi">
+      <p>Tôi là học viên thạc sĩ người Việt tại Đại học Kinh tế Plekhanov (Moskva), theo học ngành Kinh doanh thương mại bằng học bổng Chính phủ Nga, hệ chính quy, giảng dạy bằng tiếng Nga.</p>
+      <p>Trước khi sang Nga, tôi có khoảng 2 năm làm việc cùng nhà bán hàng tại hai nền tảng hàng đầu Việt Nam là Foody/ShopeeFood và Tiki: ký hợp đồng và đưa đối tác lên sàn, quản lý nhóm nhà bán hàng lớn và luôn đạt KPI hằng tháng. Song song, tôi có khoảng 6 năm tự kinh doanh: một quán ăn, một cửa hàng giày và một số shop online.</p>
+      <p>Hiện tôi tập trung vào thương mại điện tử tại Nga. Với bút danh <strong>Daniel Nguyễn</strong>, tôi viết cẩm nang thực tế giúp người Việt bán hàng trên Ozon và các sàn khác của Nga.</p>
+    </div>
+    <div data-l="ru">
+      <p>Я магистрант из Вьетнама в РЭУ им. Г. В. Плеханова (Москва). Обучаюсь по направлению «Торговое дело» по квоте Правительства Российской Федерации, на очной форме, на русском языке.</p>
+      <p>До переезда в Россию я около двух лет работал с продавцами на ведущих площадках Вьетнама, Foody/ShopeeFood и Tiki: заключал договоры и подключал партнёров, вёл крупных продавцов и ежемесячно выполнял KPI. Параллельно около шести лет вёл собственный малый бизнес: кафе, магазин обуви и несколько интернет-магазинов.</p>
+      <p>Сейчас я занимаюсь электронной коммерцией в России. Под именем <strong>Даниэль Нгуен</strong> я пишу практические руководства, которые помогают вьетнамским предпринимателям продавать на Ozon и других российских маркетплейсах.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2><span data-l="en">Experience</span><span data-l="vi">Kinh nghiệm làm việc</span><span data-l="ru">Опыт работы</span></h2>
+
+    <div class="item">
+      <h3><span data-l="en">Founder &amp; Author</span><span data-l="vi">Nhà sáng lập, tác giả</span><span data-l="ru">Основатель и автор</span></h3>
+      <div class="org">Daniel Nguyễn · <span data-l="en">Russian e-commerce for Vietnamese sellers</span><span data-l="vi">Cẩm nang TMĐT Nga cho người Việt</span><span data-l="ru">Электронная коммерция в России для вьетнамских продавцов</span></div>
+      <div class="when"><span data-l="en">2026 – present · Moscow</span><span data-l="vi">2026 – nay · Moskva</span><span data-l="ru">2026 – н. в. · Москва</span></div>
+      <ul data-l="en">
+        <li>Wrote a Vietnamese-language guide to selling on Ozon, with profit-and-loss, advertising and inventory spreadsheets.</li>
+        <li>Designing written consulting services: pre-launch product checks, store audits and product listing support.</li>
+      </ul>
+      <ul data-l="vi">
+        <li>Viết cẩm nang bán hàng trên Ozon bằng tiếng Việt, kèm bộ bảng tính lãi lỗ, quảng cáo và tồn kho.</li>
+        <li>Xây dựng các gói tư vấn bằng văn bản: kiểm tra sản phẩm trước khi bán, rà soát gian hàng, hỗ trợ đăng sản phẩm.</li>
+      </ul>
+      <ul data-l="ru">
+        <li>Написал руководство на вьетнамском языке по продажам на Ozon с таблицами для расчёта прибыли, рекламы и складских остатков.</li>
+        <li>Разрабатываю письменные консультации: проверка товара перед запуском, аудит магазина, помощь в создании карточек товаров.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3><span data-l="en">Owner &amp; Operator</span><span data-l="vi">Chủ doanh nghiệp, người vận hành</span><span data-l="ru">Владелец и управляющий</span></h3>
+      <div class="org"><span data-l="en">Several small businesses</span><span data-l="vi">Nhiều mảng kinh doanh</span><span data-l="ru">Несколько малых предприятий</span></div>
+      <div class="when"><span data-l="en">2019 – 2025 · Ho Chi Minh City</span><span data-l="vi">2019 – 2025 · TP.HCM</span><span data-l="ru">2019 – 2025 · Хошимин</span></div>
+      <ul data-l="en">
+        <li>Ran T@Food, a restaurant with a team of four, and grew sales to about 5 million VND per day through online marketing and expansion into nearby areas; sold the business before moving to Russia.</li>
+        <li>Built operating procedures, trained staff to a consistent standard and adapted the menu to local tastes.</li>
+        <li>Co-founded a shoe store with a former Tiki colleague and ran several shops on Shopee.</li>
+      </ul>
+      <ul data-l="vi">
+        <li>Vận hành quán ăn T@Food với 4 nhân sự, tăng doanh số lên khoảng 5 triệu đồng/ngày nhờ marketing online và mở rộng khu vực lân cận; sang lại quán trước khi sang Nga.</li>
+        <li>Xây dựng quy trình vận hành, đào tạo nhân viên theo tiêu chuẩn và điều chỉnh thực đơn theo thị hiếu địa phương.</li>
+        <li>Mở cửa hàng giày cùng đồng nghiệp cũ ở Tiki và vận hành một số shop trên Shopee.</li>
+      </ul>
+      <ul data-l="ru">
+        <li>Управлял кафе T@Food с командой из четырёх человек; благодаря онлайн-маркетингу и выходу на соседние районы довёл выручку примерно до 5 млн донгов в день. Продал бизнес перед переездом в Россию.</li>
+        <li>Выстроил операционные процессы, обучал персонал единым стандартам, адаптировал меню под местный спрос.</li>
+        <li>Вместе с бывшим коллегой из Tiki открыл магазин обуви; вёл несколько магазинов на Shopee.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3><span data-l="en">Seller Business Manager</span><span data-l="vi">Chuyên viên quản lý kinh doanh nhà bán</span><span data-l="ru">Менеджер по работе с продавцами</span></h3>
+      <div class="org">Tiki</div>
+      <div class="when"><span data-l="en">06/2021 – 03/2022 · Ho Chi Minh City</span><span data-l="vi">06/2021 – 03/2022 · TP.HCM</span><span data-l="ru">06/2021 – 03/2022 · Хошимин</span></div>
+      <ul data-l="en">
+        <li>Managed a portfolio of top sellers, the highest-revenue merchants on the platform, in the electronics category.</li>
+        <li>Met monthly KPIs every month; shortened store activation time and supported sellers throughout the partnership.</li>
+        <li>Onboarded and trained 300+ sellers across my time at Tiki.</li>
+      </ul>
+      <ul data-l="vi">
+        <li>Phụ trách nhóm top seller, những nhà bán hàng có doanh số cao nhất trên sàn, ngành hàng điện tử.</li>
+        <li>Đạt KPI tất cả các tháng; rút ngắn thời gian kích hoạt gian hàng, hỗ trợ nhà bán trong suốt quá trình hợp tác.</li>
+        <li>Đưa hơn 300 nhà bán hàng lên Tiki và tổ chức đào tạo trong thời gian làm việc tại Tiki.</li>
+      </ul>
+      <ul data-l="ru">
+        <li>Вёл портфель топ-продавцов, лидеров площадки по выручке, в категории электроники.</li>
+        <li>Выполнял KPI каждый месяц; сократил время активации магазинов и сопровождал продавцов на всём этапе сотрудничества.</li>
+        <li>За время работы в Tiki подключил и обучил более 300 продавцов.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3><span data-l="en">Commercial Associate</span><span data-l="vi">Nhân viên thương mại</span><span data-l="ru">Специалист коммерческого отдела</span></h3>
+      <div class="org">Tiki</div>
+      <div class="when"><span data-l="en">09/2019 – 11/2019 · Ho Chi Minh City</span><span data-l="vi">09/2019 – 11/2019 · TP.HCM</span><span data-l="ru">09/2019 – 11/2019 · Хошимин</span></div>
+    </div>
+
+    <div class="item">
+      <h3><span data-l="en">Partner Development Executive → Team Lead</span><span data-l="vi">Chuyên viên phát triển đối tác → Trưởng nhóm</span><span data-l="ru">Менеджер по развитию партнёров → руководитель группы</span></h3>
+      <div class="org">Foody (ShopeeFood)</div>
+      <div class="when"><span data-l="en">07/2018 – 05/2019 · Ho Chi Minh City</span><span data-l="vi">07/2018 – 05/2019 · TP.HCM</span><span data-l="ru">07/2018 – 05/2019 · Хошимин</span></div>
+      <ul data-l="en">
+        <li>Signed restaurants and food outlets as partners, onboarded them and helped them run in-app and external marketing campaigns.</li>
+        <li>Ranked in the company's monthly Top 10 with awards for three consecutive months.</li>
+        <li>Promoted to lead a team of six in my fifth month (two-month probationary period): owned the area's sales targets, recruited and coached the team; the team ranked in the top 5 for two consecutive months.</li>
+      </ul>
+      <ul data-l="vi">
+        <li>Ký hợp đồng và đưa các nhà hàng, quán ăn lên sàn; hỗ trợ đối tác thực hiện các chiến dịch quảng cáo trong và ngoài ứng dụng.</li>
+        <li>Lọt top 10 toàn công ty, kèm khen thưởng, 3 tháng liên tiếp.</li>
+        <li>Được đề bạt làm trưởng nhóm 6 người từ tháng thứ 5 (2 tháng thử việc): chịu trách nhiệm doanh số khu vực, tuyển dụng và đào tạo nhóm; nhóm nằm trong top 5 hai tháng liên tiếp.</li>
+      </ul>
+      <ul data-l="ru">
+        <li>Заключал договоры с ресторанами и кафе, подключал их к платформе и помогал проводить рекламные кампании в приложении и за его пределами.</li>
+        <li>Три месяца подряд входил в ежемесячный топ-10 компании с премиями.</li>
+        <li>На пятом месяце назначен руководителем группы из шести человек (испытательный срок два месяца): отвечал за продажи на участке, подбор и обучение команды; группа два месяца подряд входила в топ-5.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2><span data-l="en">Education</span><span data-l="vi">Học vấn</span><span data-l="ru">Образование</span></h2>
+
+    <div class="item">
+      <h3><span data-l="en">Master's in Commerce</span><span data-l="vi">Thạc sĩ Kinh doanh thương mại</span><span data-l="ru">Магистратура, «Торговое дело»</span><span class="tag"><span data-l="en">Scholarship</span><span data-l="vi">Học bổng</span><span data-l="ru">Квота</span></span></h3>
+      <div class="org"><span data-l="en">Plekhanov Russian University of Economics, Moscow</span><span data-l="vi">Đại học Kinh tế Plekhanov, Moskva</span><span data-l="ru">РЭУ им. Г. В. Плеханова, Москва</span></div>
+      <div class="when"><span data-l="en">09/2026 – 09/2028 (expected)</span><span data-l="vi">09/2026 – 09/2028 (dự kiến)</span><span data-l="ru">09/2026 – 09/2028 (ожидается)</span></div>
+      <ul data-l="en"><li>Focus: organisation and technology of trading enterprises.</li><li>Russian Government Scholarship; full-time programme taught in Russian.</li></ul>
+      <ul data-l="vi"><li>Chuyên sâu: tổ chức và công nghệ của doanh nghiệp thương mại.</li><li>Học bổng Chính phủ Nga; chương trình chính quy bằng tiếng Nga.</li></ul>
+      <ul data-l="ru"><li>Профиль: организация и технологии торгового предприятия.</li><li>Обучение по квоте Правительства РФ; очная форма, на русском языке.</li></ul>
+    </div>
+
+    <div class="item">
+      <h3><span data-l="en">Russian Language Preparatory Year</span><span data-l="vi">Năm dự bị tiếng Nga</span><span data-l="ru">Подготовительный факультет (русский язык)</span></h3>
+      <div class="org"><span data-l="en">Russia</span><span data-l="vi">Nga</span><span data-l="ru">Россия</span></div>
+      <div class="when">2025 – 2026</div>
+    </div>
+
+    <div class="item">
+      <h3><span data-l="en">Bachelor of Business Administration</span><span data-l="vi">Cử nhân Quản trị kinh doanh</span><span data-l="ru">Бакалавриат, «Менеджмент»</span><span class="tag"><span data-l="en">Distinction</span><span data-l="vi">Loại Giỏi</span><span data-l="ru">С отличием</span></span></h3>
+      <div class="org"><span data-l="en">Ho Chi Minh City Open University</span><span data-l="vi">Đại học Mở TP.HCM</span><span data-l="ru">Открытый университет Хошимина</span></div>
+      <div class="when">2021 – 2025</div>
+      <ul data-l="en"><li>Graduated with distinction, GPA 3.36/4.0.</li><li>Distance-learning programme completed while working full time and running my own businesses.</li></ul>
+      <ul data-l="vi"><li>Tốt nghiệp loại Giỏi, GPA 3.36/4.0.</li><li>Hệ từ xa, vừa học vừa làm vừa kinh doanh.</li></ul>
+      <ul data-l="ru"><li>Окончил с отличием, GPA 3,36/4,0.</li><li>Дистанционная форма обучения параллельно с работой и собственным бизнесом.</li></ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2><span data-l="en">Projects &amp; Writing</span><span data-l="vi">Dự án và bài viết</span><span data-l="ru">Проекты и публикации</span></h2>
+
+    <div class="card">
+      <h3><span data-l="en">Selling on Ozon: a guide for Vietnamese sellers</span><span data-l="vi">Bán hàng trên Ozon cho người Việt</span><span data-l="ru">«Продажи на Ozon для вьетнамцев»: руководство</span></h3>
+      <p data-l="en">A Vietnamese-language handbook covering Ozon fees, warehouse models (FBO and FBS), required documents, pricing and promotions, with a free sample chapter on seven hidden costs. It comes with ready-to-use tools: a profit-and-loss calculator, an advertising and promotions sheet, an inventory tracker, a 30-day plan and a store self-assessment template.</p>
+      <p data-l="vi">Cẩm nang tiếng Việt về phí sàn Ozon, mô hình kho (FBO, FBS), giấy tờ cần có, giá và khuyến mãi, kèm chương đọc thử miễn phí "Bảy khoản chi ẩn trên Ozon". Đi kèm bộ công cụ: bảng tính lãi lỗ, bảng tính quảng cáo và khuyến mãi, bảng theo dõi tồn kho, mẫu kế hoạch 30 ngày và mẫu tự đánh giá gian hàng.</p>
+      <p data-l="ru">Руководство на вьетнамском языке о комиссиях Ozon, моделях FBO и FBS, необходимых документах, ценообразовании и акциях, с бесплатной главой «Семь скрытых расходов на Ozon». В комплекте: калькулятор прибыли, таблица рекламы и акций, учёт остатков, план на 30 дней и шаблон самопроверки магазина.</p>
+    </div>
+
+    <div class="card">
+      <h3><span data-l="en">Russian e-commerce roadmap for Vietnamese sellers</span><span data-l="vi">Lộ trình: Cẩm nang TMĐT Nga cho người Việt</span><span data-l="ru">Дорожная карта: российская электронная коммерция для вьетнамцев</span></h3>
+      <p data-l="en">A planned series of free guides (Ozon, then Wildberries and Avito), a Telegram channel with weekly marketplace updates, and written consulting for Vietnamese people in Russia and for Vietnamese businesses looking to enter the Russian market.</p>
+      <p data-l="vi">Chuỗi cẩm nang miễn phí (Ozon, tiếp theo là Wildberries và Avito), kênh Telegram cập nhật sàn hằng tuần và dịch vụ tư vấn bằng văn bản cho người Việt ở Nga và doanh nghiệp Việt Nam muốn đưa hàng sang Nga.</p>
+      <p data-l="ru">Серия бесплатных руководств (Ozon, далее Wildberries и Avito), Telegram-канал с еженедельными новостями маркетплейсов и письменные консультации для вьетнамцев в России и вьетнамских компаний, выходящих на российский рынок.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2><span data-l="en">Skills &amp; Languages</span><span data-l="vi">Kỹ năng và ngôn ngữ</span><span data-l="ru">Навыки и языки</span></h2>
+    <div class="grid2">
+      <div class="card">
+        <h3><span data-l="en">Professional skills</span><span data-l="vi">Kỹ năng chuyên môn</span><span data-l="ru">Профессиональные навыки</span></h3>
+        <div class="chips">
+          <span class="chip"><span data-l="en">Seller &amp; key account management</span><span data-l="vi">Quản lý nhà bán, key account</span><span data-l="ru">Работа с продавцами и ключевыми клиентами</span></span>
+          <span class="chip"><span data-l="en">Partner acquisition &amp; contracts</span><span data-l="vi">Phát triển đối tác, ký hợp đồng</span><span data-l="ru">Привлечение партнёров и договоры</span></span>
+          <span class="chip"><span data-l="en">KPI-driven sales</span><span data-l="vi">Làm việc theo KPI</span><span data-l="ru">Продажи по KPI</span></span>
+          <span class="chip"><span data-l="en">Team leadership</span><span data-l="vi">Dẫn dắt nhóm</span><span data-l="ru">Руководство командой</span></span>
+          <span class="chip"><span data-l="en">Small business operations</span><span data-l="vi">Vận hành kinh doanh nhỏ</span><span data-l="ru">Управление малым бизнесом</span></span>
+          <span class="chip"><span data-l="en">Unit economics in Excel</span><span data-l="vi">Tính lãi lỗ bằng Excel</span><span data-l="ru">Юнит-экономика в Excel</span></span>
+          <span class="chip">Shopee · Tiki · Ozon</span>
+          <span class="chip"><span data-l="en">Learning: Wildberries, Yandex Market</span><span data-l="vi">Đang học: Wildberries, Yandex Market</span><span data-l="ru">Изучаю: Wildberries, Яндекс Маркет</span></span>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span data-l="en">Languages</span><span data-l="vi">Ngôn ngữ</span><span data-l="ru">Языки</span></h3>
+        <div class="lang-row"><span><span data-l="en">Vietnamese</span><span data-l="vi">Tiếng Việt</span><span data-l="ru">Вьетнамский</span></span><span><span data-l="en">Native</span><span data-l="vi">Tiếng mẹ đẻ</span><span data-l="ru">Родной</span></span></div>
+        <div class="lang-row"><span><span data-l="en">English</span><span data-l="vi">Tiếng Anh</span><span data-l="ru">Английский</span></span><span><span data-l="en">Basic everyday communication</span><span data-l="vi">Giao tiếp cơ bản hằng ngày</span><span data-l="ru">Базовый разговорный</span></span></div>
+        <div class="lang-row"><span><span data-l="en">Russian</span><span data-l="vi">Tiếng Nga</span><span data-l="ru">Русский</span></span><span><span data-l="en">Actively learning; studying in Russian</span><span data-l="vi">Đang học tích cực; học thạc sĩ bằng tiếng Nga</span><span data-l="ru">Активно изучаю; обучаюсь на русском</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 style="justify-content:center"><span data-l="en">Get in touch</span><span data-l="vi">Liên hệ</span><span data-l="ru">Связаться со мной</span></h2>
+    <p>
+      <span data-l="en">Open to roles in e-commerce and marketplace management in Russia, collaborations on Vietnam–Russia trade, and academic opportunities.</span>
+      <span data-l="vi">Sẵn sàng cho các vị trí về thương mại điện tử và quản lý sàn tại Nga, hợp tác thương mại Việt – Nga và các cơ hội học thuật.</span>
+      <span data-l="ru">Открыт к вакансиям в сфере электронной коммерции и маркетплейсов в России, к сотрудничеству в торговле между Вьетнамом и Россией и к академическим возможностям.</span>
+    </p>
+    <a class="btn primary" href="mailto:anhnguyen.nvt1@gmail.com">anhnguyen.nvt1@gmail.com</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Nguyễn Văn Tuấn Anh ·
+    <span data-l="en">Last updated November 2026</span><span data-l="vi">Cập nhật tháng 11/2026</span><span data-l="ru">Обновлено в ноябре 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll('.langs button');
+  function setLang(l){
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l);
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.set === l)); });
+    try { localStorage.setItem('lang', l); } catch(e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e) {}
+  var nav = (navigator.language || 'en').slice(0,2);
+  setLang(saved || (['vi','ru'].indexOf(nav) > -1 ? nav : 'en'));
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.set); }); });
+})();
+</script>
+</body>
+</html>
