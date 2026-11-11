@@ -155,6 +155,20 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
 .gallery img{aspect-ratio:1;object-fit:cover;transition:transform .25s ease}
 .gallery img:hover{transform:scale(1.03)}
 
+.gallery.g2{grid-template-columns:1fr 1fr}
+.gallery.g2 img{aspect-ratio:4/5}
+
+/* events */
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ev{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.ev img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ev figcaption{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;font-size:14.5px;line-height:1.5}
+.ev-date{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.ev b{font-family:"Noto Serif",Georgia,serif;color:var(--navy);font-size:16px;line-height:1.35}
+.ev figcaption > span:last-child{color:var(--muted)}
+@media (max-width:860px){ .events{grid-template-columns:1fr 1fr} }
+@media (max-width:560px){ .events{grid-template-columns:1fr} }
+
 /* beyond work */
 .beyond{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .b-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
@@ -224,6 +238,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <a href="#experience"><span data-l="en">Experience</span><span data-l="vi">Kinh nghiệm</span><span data-l="ru">Опыт</span></a>
       <a href="#education"><span data-l="en">Education</span><span data-l="vi">Học vấn</span><span data-l="ru">Образование</span></a>
       <a href="#projects"><span data-l="en">Projects</span><span data-l="vi">Dự án</span><span data-l="ru">Проекты</span></a>
+      <a href="#events"><span data-l="en">Events</span><span data-l="vi">Sự kiện</span><span data-l="ru">События</span></a>
       <a href="#beyond"><span data-l="en">Beyond work</span><span data-l="vi">Ngoài công việc</span><span data-l="ru">Вне работы</span></a>
       <a href="#skills"><span data-l="en">Skills</span><span data-l="vi">Kỹ năng</span><span data-l="ru">Навыки</span></a>
       <a href="#contact"><span data-l="en">Contact</span><span data-l="vi">Liên hệ</span><span data-l="ru">Контакты</span></a>
@@ -378,6 +393,12 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
         <li>Вместе с бывшим коллегой из Tiki открыл магазин обуви; вёл несколько магазинов на Shopee.</li>
       </ul>
       <div class="gallery g3">
+        <figure><img src="assets/food-combo.jpg" alt="Bún mắm nêm, fresh spring rolls and kumquat tea combo" loading="lazy"></figure>
+        <figure><img src="assets/food-rolls.jpg" alt="Fresh spring rolls with dipping sauce" loading="lazy"></figure>
+        <figure><img src="assets/food-packed.jpg" alt="Spring rolls packed for delivery orders" loading="lazy"></figure>
+      </div>
+      <p class="figcap"><span data-l="en">Dishes from my restaurant: a combo, fresh spring rolls and orders packed for delivery apps</span><span data-l="vi">Món ăn ở quán của tôi: combo bún mắm nêm, gỏi cuốn và các đơn đóng gói giao qua ứng dụng</span><span data-l="ru">Блюда из моего кафе: комбо, свежие спринг-роллы и заказы, упакованные для доставки</span></p>
+      <div class="gallery g3">
         <figure><img src="assets/store.jpg" alt="Shoe store" loading="lazy"></figure>
         <figure><img src="assets/shoes1.jpg" alt="Shoe display" loading="lazy"></figure>
         <figure><img src="assets/shoes2.jpg" alt="New stock arriving" loading="lazy"></figure>
@@ -448,16 +469,20 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <ul data-l="en"><li>Focus: organisation and technology of trading enterprises.</li><li>Russian Government Scholarship; full-time programme taught in Russian.</li></ul>
       <ul data-l="vi"><li>Chuyên sâu: tổ chức và công nghệ của doanh nghiệp thương mại.</li><li>Học bổng Chính phủ Nga; chương trình chính quy bằng tiếng Nga.</li></ul>
       <ul data-l="ru"><li>Профиль: организация и технологии торгового предприятия.</li><li>Обучение по квоте Правительства РФ; очная форма, на русском языке.</li></ul>
-      <figure class="photo-card">
-        <img src="assets/plekhanov.jpg" alt="Campus model in the lobby of Plekhanov Russian University of Economics" loading="lazy">
-        <figcaption><span data-l="en">The campus model in the university lobby</span><span data-l="vi">Mô hình khuôn viên trường ở sảnh Đại học Plekhanov</span><span data-l="ru">Макет кампуса в холле университета</span></figcaption>
-      </figure>
+      <div class="gallery g2">
+        <figure><img src="assets/plekhanov-night.jpg" alt="Main building of Plekhanov Russian University of Economics on a winter evening" loading="lazy"></figure>
+        <figure><img src="assets/plekhanov.jpg" alt="Campus model in the lobby of Plekhanov Russian University of Economics" loading="lazy"></figure>
+      </div>
+      <p class="figcap"><span data-l="en">The main building on a winter evening, and the campus model in the lobby</span><span data-l="vi">Tòa nhà chính của trường vào một tối mùa đông, và mô hình khuôn viên ở sảnh</span><span data-l="ru">Главный корпус зимним вечером и макет кампуса в холле</span></p>
     </div>
 
     <div class="item">
       <h3><span data-l="en">Russian Language Preparatory Year</span><span data-l="vi">Năm dự bị tiếng Nga</span><span data-l="ru">Подготовительный факультет (русский язык)</span></h3>
-      <div class="org"><span data-l="en">Russia</span><span data-l="vi">Nga</span><span data-l="ru">Россия</span></div>
-      <div class="when">2025 – 2026</div>
+      <div class="org"><span data-l="en">Plekhanov Russian University of Economics, Moscow</span><span data-l="vi">Đại học Kinh tế Plekhanov, Moskva</span><span data-l="ru">РЭУ им. Г. В. Плеханова, Москва</span></div>
+      <div class="when">09/2025 – 08/2026</div>
+      <ul data-l="en"><li>Pre-university programme for international students, economics track: 1,194 hours.</li><li>Final Russian language exam: 89 points.</li></ul>
+      <ul data-l="vi"><li>Chương trình dự bị đại học cho sinh viên quốc tế, khối kinh tế: 1.194 giờ học.</li><li>Điểm thi cuối khóa tiếng Nga: 89 điểm.</li></ul>
+      <ul data-l="ru"><li>Довузовская подготовка иностранных граждан, экономический профиль: 1 194 часа.</li><li>Итоговый экзамен по русскому языку: 89 баллов.</li></ul>
     </div>
 
     <div class="item">
@@ -502,6 +527,36 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <p data-l="en">A planned series of free guides (Ozon, then Wildberries and Avito), a Telegram channel with weekly marketplace updates, and written consulting for Vietnamese people in Russia and for Vietnamese businesses looking to enter the Russian market.</p>
       <p data-l="vi">Chuỗi cẩm nang miễn phí (Ozon, tiếp theo là Wildberries và Avito), kênh Telegram cập nhật sàn hằng tuần và dịch vụ tư vấn bằng văn bản cho người Việt ở Nga và doanh nghiệp Việt Nam muốn đưa hàng sang Nga.</p>
       <p data-l="ru">Серия бесплатных руководств (Ozon, далее Wildberries и Avito), Telegram-канал с еженедельными новостями маркетплейсов и письменные консультации для вьетнамцев в России и вьетнамских компаний, выходящих на российский рынок.</p>
+    </div>
+  </section>
+
+  <section id="events">
+    <h2><span data-l="en">Events &amp; community</span><span data-l="vi">Sự kiện và cộng đồng</span><span data-l="ru">Мероприятия и сообщество</span></h2>
+    <div class="events">
+      <figure class="ev reveal">
+        <img src="assets/event-forum.jpg" alt="Vietnam–Russia Science and Technology Forum, Moscow, 9 September 2026" loading="lazy">
+        <figcaption>
+          <span class="ev-date">09.09.2026 · <span data-l="en">Moscow</span><span data-l="vi">Moskva</span><span data-l="ru">Москва</span></span>
+          <b><span data-l="en">Vietnam–Russia Science &amp; Technology Forum</span><span data-l="vi">Diễn đàn Khoa học và Công nghệ Việt Nam – Liên bang Nga</span><span data-l="ru">Российско-вьетнамский научно-технологический форум</span></b>
+          <span><span data-l="en">"Strategic technology connection", organised by the two countries' science ministries. I took part as a Vietnamese student in Moscow.</span><span data-l="vi">Chủ đề "Kết nối công nghệ chiến lược", do Bộ Khoa học hai nước tổ chức. Tôi tham dự với tư cách sinh viên Việt Nam tại Moskva.</span><span data-l="ru">«Взаимодействие в области стратегических технологий», организован министерствами науки двух стран. Участвовал как вьетнамский студент в Москве.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="ev reveal">
+        <img src="assets/event-vgik.jpg" alt="Russia–Vietnam Culture and Arts Award ceremony at VGIK, 8 September 2026" loading="lazy">
+        <figcaption>
+          <span class="ev-date">08.09.2026 · <span data-l="en">VGIK, Moscow</span><span data-l="vi">VGIK, Moskva</span><span data-l="ru">ВГИК, Москва</span></span>
+          <b><span data-l="en">Russia–Vietnam Culture &amp; Arts Award</span><span data-l="vi">Lễ trao Phần thưởng Văn hóa – Nghệ thuật Nga – Việt</span><span data-l="ru">Российско-вьетнамская премия в области культуры и искусства</span></b>
+          <span><span data-l="en">Attended the award ceremony held by the "Traditions and Friendship" Foundation with both countries' culture ministries.</span><span data-l="vi">Tham dự lễ trao giải do Quỹ "Truyền thống và Hữu nghị" cùng Bộ Văn hóa hai nước tổ chức.</span><span data-l="ru">Присутствовал на церемонии фонда «Традиции и дружба» при участии министерств культуры двух стран.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="ev reveal">
+        <img src="assets/event-flags.jpg" alt="Vietnamese students at an international culture event at the university" loading="lazy">
+        <figcaption>
+          <span class="ev-date"><span data-l="en">Plekhanov University</span><span data-l="vi">Đại học Plekhanov</span><span data-l="ru">РЭУ им. Плеханова</span></span>
+          <b><span data-l="en">Representing Vietnam at the university</span><span data-l="vi">Đại diện Việt Nam tại trường</span><span data-l="ru">Представляем Вьетнам в университете</span></b>
+          <span><span data-l="en">With fellow Vietnamese students and our teachers at an international student event.</span><span data-l="vi">Cùng các bạn sinh viên Việt Nam và thầy cô tại một sự kiện sinh viên quốc tế.</span><span data-l="ru">Вместе с вьетнамскими студентами и преподавателями на международном студенческом мероприятии.</span></span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
