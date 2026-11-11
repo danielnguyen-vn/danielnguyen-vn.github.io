@@ -9,7 +9,7 @@
 <meta property="og:description" content="Master's student at Plekhanov Russian University of Economics (Moscow). Marketplace experience at Tiki and ShopeeFood, six years running small businesses.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://danielnguyen-vn.github.io/">
-<meta property="og:image" content="https://danielnguyen-vn.github.io/assets/photo.jpg">
+<meta property="og:image" content="https://danielnguyen-vn.github.io/assets/portrait.jpg">
 <link rel="canonical" href="https://danielnguyen-vn.github.io/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +139,37 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
 .book .cta{margin-top:16px}
 .book-note{display:block;color:var(--muted);margin-top:10px;font-size:13px}
 
+/* cover + hero overlap */
+.cover{height:230px;margin-top:20px;border-radius:18px;background:linear-gradient(180deg,rgba(10,20,40,0) 40%,rgba(10,20,40,.45)),url("assets/moscow.jpg") center 62%/cover}
+.cover + .hero{padding-top:0;margin-top:-84px;align-items:start}
+.cover + .hero .photo{box-shadow:0 8px 24px rgba(15,30,55,.25);margin-left:24px}
+.cover + .hero > div{padding-top:96px}
+
+/* photos inside timeline items */
+.photo-card{margin:14px 0 0;max-width:560px}
+.photo-card img,.gallery img{width:100%;display:block;border-radius:10px;border:1px solid var(--line)}
+.photo-card figcaption,.figcap{color:var(--muted);font-size:13px;margin:6px 0 0}
+.gallery{display:grid;gap:8px;margin-top:14px;max-width:560px}
+.gallery.g3{grid-template-columns:repeat(3,1fr)}
+.gallery figure{margin:0}
+.gallery img{aspect-ratio:1;object-fit:cover;transition:transform .25s ease}
+.gallery img:hover{transform:scale(1.03)}
+
+/* beyond work */
+.beyond{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.b-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.b-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(15,30,55,.08);border-color:var(--gold)}
+.b-media,.yt{margin:0;aspect-ratio:4/3;overflow:hidden;position:relative;background:#000}
+.b-media img,.yt img{width:100%;height:100%;object-fit:cover;display:block}
+.yt{border:0;padding:0;cursor:pointer;width:100%}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{position:absolute;inset:0;margin:auto;width:62px;height:62px;border-radius:50%;background:rgba(0,0,0,.6);display:grid;place-items:center;transition:transform .2s ease,background .2s ease}
+.yt:hover .play{transform:scale(1.08);background:#c4302b}
+.play svg{width:28px;height:28px;fill:#fff;margin-left:3px}
+.b-body{padding:16px 18px 18px}
+.b-body h3{font-size:17px;margin:4px 0 6px}
+.b-body p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+
 /* scroll reveal */
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .js .reveal.in{opacity:1;transform:none}
@@ -154,8 +185,18 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
   .stop::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
   .stop.ru::before{background:var(--navy)}
   .now{grid-template-columns:1fr}
+  .beyond{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .beyond{grid-template-columns:1fr}
+  .cover{height:170px;border-radius:14px}
+  .cover + .hero{margin-top:-70px}
+  .cover + .hero .photo{margin:0 auto}
+  .cover + .hero > div{padding-top:0}
 }
 @media (max-width:720px){
+  .cover + .hero > div{padding-top:0}
+  .cover + .hero .photo{margin:0 auto}
   .book{grid-template-columns:1fr;padding:20px;text-align:left}
   .book-cover{max-width:170px;margin:0 auto}
   .book .cta{justify-content:flex-start}
@@ -183,6 +224,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <a href="#experience"><span data-l="en">Experience</span><span data-l="vi">Kinh nghiệm</span><span data-l="ru">Опыт</span></a>
       <a href="#education"><span data-l="en">Education</span><span data-l="vi">Học vấn</span><span data-l="ru">Образование</span></a>
       <a href="#projects"><span data-l="en">Projects</span><span data-l="vi">Dự án</span><span data-l="ru">Проекты</span></a>
+      <a href="#beyond"><span data-l="en">Beyond work</span><span data-l="vi">Ngoài công việc</span><span data-l="ru">Вне работы</span></a>
       <a href="#skills"><span data-l="en">Skills</span><span data-l="vi">Kỹ năng</span><span data-l="ru">Навыки</span></a>
       <a href="#contact"><span data-l="en">Contact</span><span data-l="vi">Liên hệ</span><span data-l="ru">Контакты</span></a>
     </nav>
@@ -196,8 +238,9 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
 
 <main class="wrap">
 
+  <div class="cover" role="img" aria-label="Moscow skyline at sunset"></div>
   <div class="hero">
-    <img class="photo" src="assets/photo.jpg" alt="Nguyen Van Tuan Anh">
+    <img class="photo" src="assets/portrait.jpg" alt="Nguyen Van Tuan Anh">
     <div>
       <h1><span data-l="en">Nguyen Van Tuan Anh</span><span data-l="vi">Nguyễn Văn Tuấn Anh</span><span data-l="ru">Нгуен Ван Туан Ань</span></h1>
       <div class="alias"><span data-l="en">Also known as Daniel Nguyen</span><span data-l="vi">Bút danh: Daniel Nguyễn</span><span data-l="ru">Также известен как Даниэль Нгуен</span></div>
@@ -334,6 +377,12 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
         <li>Выстроил операционные процессы, обучал персонал единым стандартам, адаптировал меню под местный спрос.</li>
         <li>Вместе с бывшим коллегой из Tiki открыл магазин обуви; вёл несколько магазинов на Shopee.</li>
       </ul>
+      <div class="gallery g3">
+        <figure><img src="assets/store.jpg" alt="Shoe store" loading="lazy"></figure>
+        <figure><img src="assets/shoes1.jpg" alt="Shoe display" loading="lazy"></figure>
+        <figure><img src="assets/shoes2.jpg" alt="New stock arriving" loading="lazy"></figure>
+      </div>
+      <p class="figcap"><span data-l="en">The shoe store I ran with a former Tiki colleague</span><span data-l="vi">Cửa hàng giày tôi mở cùng đồng nghiệp cũ ở Tiki</span><span data-l="ru">Магазин обуви, который я открыл с бывшим коллегой из Tiki</span></p>
     </div>
 
     <div class="item">
@@ -382,6 +431,10 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
         <li>Три месяца подряд входил в ежемесячный топ-10 компании с премиями.</li>
         <li>На пятом месяце назначен руководителем группы из шести человек (испытательный срок два месяца): отвечал за продажи на участке, подбор и обучение команды; группа два месяца подряд входила в топ-5.</li>
       </ul>
+      <figure class="photo-card">
+        <img src="assets/award-shopeefood.jpg" alt="Agent Ranking award ceremony at Foody (ShopeeFood), 2018" loading="lazy">
+        <figcaption><span data-l="en">"Agent Ranking" award ceremony at Foody (ShopeeFood), November 2018</span><span data-l="vi">Lễ vinh danh "Agent Ranking" tại Foody (ShopeeFood), tháng 11/2018</span><span data-l="ru">Награждение «Agent Ranking» в Foody (ShopeeFood), ноябрь 2018</span></figcaption>
+      </figure>
     </div>
   </section>
 
@@ -395,6 +448,10 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <ul data-l="en"><li>Focus: organisation and technology of trading enterprises.</li><li>Russian Government Scholarship; full-time programme taught in Russian.</li></ul>
       <ul data-l="vi"><li>Chuyên sâu: tổ chức và công nghệ của doanh nghiệp thương mại.</li><li>Học bổng Chính phủ Nga; chương trình chính quy bằng tiếng Nga.</li></ul>
       <ul data-l="ru"><li>Профиль: организация и технологии торгового предприятия.</li><li>Обучение по квоте Правительства РФ; очная форма, на русском языке.</li></ul>
+      <figure class="photo-card">
+        <img src="assets/plekhanov.jpg" alt="Campus model in the lobby of Plekhanov Russian University of Economics" loading="lazy">
+        <figcaption><span data-l="en">The campus model in the university lobby</span><span data-l="vi">Mô hình khuôn viên trường ở sảnh Đại học Plekhanov</span><span data-l="ru">Макет кампуса в холле университета</span></figcaption>
+      </figure>
     </div>
 
     <div class="item">
@@ -448,6 +505,39 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
     </div>
   </section>
 
+  <section id="beyond">
+    <h2><span data-l="en">Beyond work</span><span data-l="vi">Ngoài công việc</span><span data-l="ru">Вне работы</span></h2>
+    <div class="beyond">
+      <div class="b-card reveal">
+        <button class="yt" type="button" data-id="xHXqP2JHYl0" aria-label="Play: Lợi Danh — cover by Tuấn Anh">
+          <img src="https://i.ytimg.com/vi/xHXqP2JHYl0/hqdefault.jpg" alt="" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
+        <div class="b-body">
+          <div class="eyebrow"><span data-l="en">Music</span><span data-l="vi">Âm nhạc</span><span data-l="ru">Музыка</span></div>
+          <h3><span data-l="en">Singing</span><span data-l="vi">Ca hát</span><span data-l="ru">Пение</span></h3>
+          <p><span data-l="en">A cover of "Lợi Danh" (Phạm Khánh Hưng). Music is how I unwind after a long day.</span><span data-l="vi">Cover "Lợi Danh" (Phạm Khánh Hưng). Âm nhạc là cách tôi thư giãn sau một ngày dài.</span><span data-l="ru">Кавер на песню «Lợi Danh» (Фам Кхань Хынг). Музыка помогает мне отдохнуть после долгого дня.</span></p>
+        </div>
+      </div>
+      <div class="b-card reveal">
+        <figure class="b-media"><img src="assets/studio.jpg" alt="Recording a voice-over in a studio" loading="lazy"></figure>
+        <div class="b-body">
+          <div class="eyebrow"><span data-l="en">Voice</span><span data-l="vi">Giọng nói</span><span data-l="ru">Голос</span></div>
+          <h3><span data-l="en">MC &amp; voice-over</span><span data-l="vi">MC và đọc lồng tiếng</span><span data-l="ru">Ведущий и озвучка</span></h3>
+          <p><span data-l="en">I have hosted as an MC and recorded news-style voice-overs in the studio.</span><span data-l="vi">Tôi từng làm MC và thu âm đọc bản tin trong phòng thu.</span><span data-l="ru">Работал ведущим и записывал озвучку в формате новостей в студии.</span></p>
+        </div>
+      </div>
+      <div class="b-card reveal">
+        <figure class="b-media"><img src="assets/painting.jpg" alt="A sunset painting by Tuan Anh" loading="lazy"></figure>
+        <div class="b-body">
+          <div class="eyebrow"><span data-l="en">Art</span><span data-l="vi">Hội họa</span><span data-l="ru">Живопись</span></div>
+          <h3><span data-l="en">Painting</span><span data-l="vi">Vẽ tranh</span><span data-l="ru">Рисование</span></h3>
+          <p><span data-l="en">A sunset over the water, painted at home. Drawing teaches me patience and attention to detail.</span><span data-l="vi">Hoàng hôn trên mặt nước, tôi tự vẽ ở nhà. Vẽ tranh rèn cho tôi sự kiên nhẫn và tỉ mỉ.</span><span data-l="ru">Закат над водой, нарисованный дома. Рисование учит меня терпению и вниманию к деталям.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <h2><span data-l="en">Skills &amp; Languages</span><span data-l="vi">Kỹ năng và ngôn ngữ</span><span data-l="ru">Навыки и языки</span></h2>
     <div class="grid2">
@@ -480,7 +570,11 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <span data-l="vi">Sẵn sàng cho các vị trí về thương mại điện tử và quản lý sàn tại Nga, hợp tác thương mại Việt – Nga và các cơ hội học thuật.</span>
       <span data-l="ru">Открыт к вакансиям в сфере электронной коммерции и маркетплейсов в России, к сотрудничеству в торговле между Вьетнамом и Россией и к академическим возможностям.</span>
     </p>
-    <a class="btn primary" href="mailto:anhnguyen.nvt1@gmail.com">anhnguyen.nvt1@gmail.com</a>
+    <div class="cta" style="justify-content:center">
+      <a class="btn primary" href="mailto:anhnguyen.nvt1@gmail.com">anhnguyen.nvt1@gmail.com</a>
+      <a class="btn ghost" href="https://t.me/danielnguyen_sannga" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn ghost" href="https://www.facebook.com/profile.php?id=61596193692032" target="_blank" rel="noopener"><span data-l="en">Facebook page</span><span data-l="vi">Fanpage</span><span data-l="ru">Страница в Facebook</span></a>
+    </div>
   </section>
 </main>
 
@@ -506,6 +600,18 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
   var nav = (navigator.language || 'en').slice(0,2);
   setLang(saved || (['vi','ru'].indexOf(nav) > -1 ? nav : 'en'));
   buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.set); }); });
+
+  // click-to-play YouTube (loads the player only when asked)
+  document.querySelectorAll('.yt').forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.replaceChildren(f);
+    }, { once: true });
+  });
 
   // reveal on scroll
   var items = document.querySelectorAll('.reveal');
