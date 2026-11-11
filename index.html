@@ -520,11 +520,14 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
         </div>
       </div>
       <div class="b-card reveal">
-        <figure class="b-media"><img src="assets/studio.jpg" alt="Recording a voice-over in a studio" loading="lazy"></figure>
+        <button class="yt" type="button" data-embed="https://drive.google.com/file/d/1y0PA1bhARcljLDrwqXihwx6lJxsC_-q-/preview" aria-label="Play: MC news reading clip">
+          <img src="assets/studio.jpg" alt="" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
         <div class="b-body">
           <div class="eyebrow"><span data-l="en">Voice</span><span data-l="vi">Giọng nói</span><span data-l="ru">Голос</span></div>
           <h3><span data-l="en">MC &amp; voice-over</span><span data-l="vi">MC và đọc lồng tiếng</span><span data-l="ru">Ведущий и озвучка</span></h3>
-          <p><span data-l="en">I have hosted as an MC and recorded news-style voice-overs in the studio.</span><span data-l="vi">Tôi từng làm MC và thu âm đọc bản tin trong phòng thu.</span><span data-l="ru">Работал ведущим и записывал озвучку в формате новостей в студии.</span></p>
+          <p><span data-l="en">I have hosted as an MC and recorded news-style voice-overs in the studio. Press play to watch a news-reading clip.</span><span data-l="vi">Tôi từng làm MC và thu âm đọc bản tin trong phòng thu. Bấm để xem clip dẫn bản tin.</span><span data-l="ru">Работал ведущим и записывал озвучку в формате новостей в студии. Нажмите, чтобы посмотреть выпуск новостей.</span></p>
         </div>
       </div>
       <div class="b-card reveal">
@@ -605,7 +608,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
   document.querySelectorAll('.yt').forEach(function(b){
     b.addEventListener('click', function(){
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.src = b.dataset.embed || ('https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0');
       f.title = b.getAttribute('aria-label');
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
