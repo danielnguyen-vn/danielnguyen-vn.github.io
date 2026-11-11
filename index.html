@@ -99,7 +99,66 @@ section > h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .contact p{color:var(--muted);max-width:560px;margin:8px auto 20px}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:20px 0 36px;text-align:center}
 
+/* now */
+.now{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.now-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.now-card:hover,.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(15,30,55,.08);border-color:var(--gold)}
+.card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.now-card h3{font-size:17px;margin:12px 0 6px}
+.now-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+.ico{width:42px;height:42px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center}
+.ico svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* journey */
+.route{display:flex;align-items:center;gap:12px;margin:-4px 0 22px;font-size:14px;font-weight:600}
+.city{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.city::before{content:"";width:10px;height:10px;border-radius:50%}
+.city.vn::before{background:var(--gold)}
+.city.ru::before{background:var(--navy)}
+.route-line{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),var(--navy));position:relative;border-radius:2px}
+.plane{position:absolute;top:50%;left:0;width:22px;height:22px;transform:translate(-50%,-50%) rotate(90deg);fill:var(--navy);animation:fly 6s ease-in-out infinite alternate}
+@keyframes fly{from{left:4%}to{left:96%}}
+.journey{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:s}
+.stop{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:14px;font-size:14px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
+.stop.ru{border-top-color:var(--navy)}
+.stop .yr{font:700 20px "Noto Serif",Georgia,serif;color:var(--navy)}
+.stop b{color:var(--ink);font-size:14.5px}
+.stop > span:last-child{color:var(--muted)}
+
+/* featured book */
+.book{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:14px}
+.book-cover img{width:100%;display:block;border-radius:6px;box-shadow:0 14px 30px rgba(15,30,55,.22);transform:rotate(-2deg);transition:transform .25s ease}
+.book-cover:hover img{transform:rotate(0) scale(1.03)}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.book h3{font-size:24px;margin:6px 0 2px}
+.book-sub{color:var(--muted);font-style:italic;margin-bottom:12px}
+.book p{margin:0 0 14px}
+.book-facts{display:flex;flex-wrap:wrap;gap:8px}
+.book-facts > span{background:var(--chip);border-radius:999px;padding:5px 12px;font-size:14px}
+.book-facts b{color:var(--navy)}
+.book .cta{margin-top:16px}
+.book-note{display:block;color:var(--muted);margin-top:10px;font-size:13px}
+
+/* scroll reveal */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .plane{animation:none;left:50%}
+  .now-card,.card,.book-cover img{transition:none}
+}
+
+@media (max-width:860px){
+  .journey{grid-template-columns:1fr;gap:0;border-left:2px solid var(--line);margin-left:6px}
+  .stop{border:0;border-radius:0;background:none;padding:0 0 18px 22px;position:relative}
+  .stop::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+  .stop.ru::before{background:var(--navy)}
+  .now{grid-template-columns:1fr}
+}
 @media (max-width:720px){
+  .book{grid-template-columns:1fr;padding:20px;text-align:left}
+  .book-cover{max-width:170px;margin:0 auto}
+  .book .cta{justify-content:flex-start}
   .hero{grid-template-columns:1fr;text-align:center;gap:20px;padding-top:36px}
   .photo{margin:0 auto;width:140px;height:140px}
   .hero h1{font-size:30px}
@@ -159,6 +218,26 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
     </div>
   </div>
 
+  <section id="now" class="now-sec">
+    <h2><span data-l="en">Right now</span><span data-l="vi">Hiện tại tôi đang…</span><span data-l="ru">Сейчас</span></h2>
+    <div class="now">
+      <div class="now-card reveal">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+        <h3><span data-l="en">Studying</span><span data-l="vi">Đang học</span><span data-l="ru">Учусь</span></h3>
+        <p><span data-l="en">Master's in Commerce at Plekhanov University, in Russian, and improving my Russian every day.</span><span data-l="vi">Thạc sĩ Kinh doanh thương mại tại Đại học Plekhanov, học bằng tiếng Nga, và rèn tiếng Nga mỗi ngày.</span><span data-l="ru">Магистратура «Торговое дело» в РЭУ им. Плеханова на русском языке; каждый день совершенствую русский.</span></p>
+      </div>
+      <div class="now-card reveal">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg></div>
+        <h3><span data-l="en">Writing</span><span data-l="vi">Đang viết</span><span data-l="ru">Пишу</span></h3>
+        <p><span data-l="en">Free guides for Vietnamese sellers on Russian marketplaces: Ozon is out, Wildberries is next.</span><span data-l="vi">Cẩm nang miễn phí cho người Việt bán hàng trên sàn Nga: xong tập Ozon, tiếp theo là Wildberries.</span><span data-l="ru">Бесплатные руководства для вьетнамских продавцов: том по Ozon готов, следующий — Wildberries.</span></p>
+      </div>
+      <div class="now-card reveal">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></div>
+        <h3><span data-l="en">Looking for</span><span data-l="vi">Đang tìm</span><span data-l="ru">Ищу</span></h3>
+        <p><span data-l="en">Roles in e-commerce and marketplace management in Moscow, and partners in Vietnam–Russia trade.</span><span data-l="vi">Vị trí về thương mại điện tử, quản lý sàn tại Moskva và đối tác thương mại Việt – Nga.</span><span data-l="ru">Работу в электронной коммерции и управлении маркетплейсами в Москве, партнёров во вьетнамско-российской торговле.</span></p>
+      </div>
+    </div>
+  </section>
 
   <section id="about" class="lead">
     <h2><span data-l="en">About</span><span data-l="vi">Giới thiệu</span><span data-l="ru">Обо мне</span></h2>
@@ -177,6 +256,42 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <p>До переезда в Россию я около двух лет работал с продавцами на ведущих площадках Вьетнама, Foody/ShopeeFood и Tiki: заключал договоры и подключал партнёров, вёл крупных продавцов и ежемесячно выполнял KPI. Параллельно около шести лет вёл собственный малый бизнес: кафе, магазин обуви и несколько интернет-магазинов.</p>
       <p>Сейчас я занимаюсь электронной коммерцией в России. Под именем <strong>Даниэль Нгуен</strong> я пишу практические руководства, которые помогают вьетнамским предпринимателям продавать на Ozon и других российских маркетплейсах.</p>
     </div>
+  </section>
+
+  <section id="journey">
+    <h2><span data-l="en">My journey</span><span data-l="vi">Hành trình</span><span data-l="ru">Мой путь</span></h2>
+    <div class="route" aria-hidden="true">
+      <span class="city vn"><span data-l="en">Ho Chi Minh City</span><span data-l="vi">TP. Hồ Chí Minh</span><span data-l="ru">Хошимин</span></span>
+      <span class="route-line"><svg class="plane" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></span>
+      <span class="city ru"><span data-l="en">Moscow</span><span data-l="vi">Moskva</span><span data-l="ru">Москва</span></span>
+    </div>
+    <ol class="journey">
+      <li class="stop vn reveal">
+        <span class="yr">2018</span>
+        <b><span data-l="en">First marketplace job</span><span data-l="vi">Công việc đầu tiên trên sàn</span><span data-l="ru">Первая работа на платформе</span></b>
+        <span><span data-l="en">Foody (ShopeeFood): partner development, then team lead</span><span data-l="vi">Foody (ShopeeFood): phát triển đối tác, rồi trưởng nhóm</span><span data-l="ru">Foody (ShopeeFood): развитие партнёров, затем руководитель группы</span></span>
+      </li>
+      <li class="stop vn reveal">
+        <span class="yr">2019</span>
+        <b><span data-l="en">Own businesses</span><span data-l="vi">Tự kinh doanh</span><span data-l="ru">Собственный бизнес</span></b>
+        <span><span data-l="en">A restaurant, a shoe store and Shopee shops</span><span data-l="vi">Quán ăn, cửa hàng giày và shop trên Shopee</span><span data-l="ru">Кафе, магазин обуви и магазины на Shopee</span></span>
+      </li>
+      <li class="stop vn reveal">
+        <span class="yr">2021</span>
+        <b><span data-l="en">Tiki &amp; university</span><span data-l="vi">Tiki và đại học</span><span data-l="ru">Tiki и университет</span></b>
+        <span><span data-l="en">Managing top sellers while starting a BBA</span><span data-l="vi">Quản lý top seller, đồng thời học cử nhân QTKD</span><span data-l="ru">Работа с топ-продавцами и учёба в бакалавриате</span></span>
+      </li>
+      <li class="stop ru reveal">
+        <span class="yr">2025</span>
+        <b><span data-l="en">Graduation &amp; move to Russia</span><span data-l="vi">Tốt nghiệp và sang Nga</span><span data-l="ru">Диплом и переезд в Россию</span></b>
+        <span><span data-l="en">BBA with distinction, then a Russian preparatory year</span><span data-l="vi">Cử nhân loại Giỏi, rồi năm dự bị tiếng Nga</span><span data-l="ru">Бакалавр с отличием, затем подготовительный год</span></span>
+      </li>
+      <li class="stop ru reveal">
+        <span class="yr">2026</span>
+        <b><span data-l="en">Master's &amp; Daniel Nguyen</span><span data-l="vi">Thạc sĩ và Daniel Nguyễn</span><span data-l="ru">Магистратура и Даниэль Нгуен</span></b>
+        <span><span data-l="en">Plekhanov on a scholarship; first guide published</span><span data-l="vi">Học bổng Plekhanov; ra mắt cẩm nang đầu tiên</span><span data-l="ru">Плехановский по квоте; первое руководство</span></span>
+      </li>
+    </ol>
   </section>
 
   <section id="experience">
@@ -292,20 +407,37 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
       <h3><span data-l="en">Bachelor of Business Administration</span><span data-l="vi">Cử nhân Quản trị kinh doanh</span><span data-l="ru">Бакалавриат, «Менеджмент»</span><span class="tag"><span data-l="en">Distinction</span><span data-l="vi">Loại Giỏi</span><span data-l="ru">С отличием</span></span></h3>
       <div class="org"><span data-l="en">Ho Chi Minh City Open University</span><span data-l="vi">Đại học Mở TP.HCM</span><span data-l="ru">Открытый университет Хошимина</span></div>
       <div class="when">2021 – 2025</div>
-      <ul data-l="en"><li>Graduated with distinction, GPA 3.36/4.0.</li><li>Distance-learning programme completed while working full time and running my own businesses.</li></ul>
-      <ul data-l="vi"><li>Tốt nghiệp loại Giỏi, GPA 3.36/4.0.</li><li>Hệ từ xa, vừa học vừa làm vừa kinh doanh.</li></ul>
-      <ul data-l="ru"><li>Окончил с отличием, GPA 3,36/4,0.</li><li>Дистанционная форма обучения параллельно с работой и собственным бизнесом.</li></ul>
+      <ul data-l="en"><li>Graduated with distinction, GPA 3.36/4.0.</li><li>Completed while working full time and running my own businesses.</li></ul>
+      <ul data-l="vi"><li>Tốt nghiệp loại Giỏi, GPA 3.36/4.0.</li><li>Vừa học vừa làm vừa kinh doanh.</li></ul>
+      <ul data-l="ru"><li>Окончил с отличием, GPA 3,36/4,0.</li><li>Учился параллельно с работой и собственным бизнесом.</li></ul>
     </div>
   </section>
 
   <section id="projects">
     <h2><span data-l="en">Projects &amp; Writing</span><span data-l="vi">Dự án và bài viết</span><span data-l="ru">Проекты и публикации</span></h2>
 
-    <div class="card">
-      <h3><span data-l="en">Selling on Ozon: a guide for Vietnamese sellers</span><span data-l="vi">Bán hàng trên Ozon cho người Việt</span><span data-l="ru">«Продажи на Ozon для вьетнамцев»: руководство</span></h3>
-      <p data-l="en">A Vietnamese-language handbook covering Ozon fees, warehouse models (FBO and FBS), required documents, pricing and promotions, with a free sample chapter on seven hidden costs. It comes with ready-to-use tools: a profit-and-loss calculator, an advertising and promotions sheet, an inventory tracker, a 30-day plan and a store self-assessment template.</p>
-      <p data-l="vi">Cẩm nang tiếng Việt về phí sàn Ozon, mô hình kho (FBO, FBS), giấy tờ cần có, giá và khuyến mãi, kèm chương đọc thử miễn phí "Bảy khoản chi ẩn trên Ozon". Đi kèm bộ công cụ: bảng tính lãi lỗ, bảng tính quảng cáo và khuyến mãi, bảng theo dõi tồn kho, mẫu kế hoạch 30 ngày và mẫu tự đánh giá gian hàng.</p>
-      <p data-l="ru">Руководство на вьетнамском языке о комиссиях Ozon, моделях FBO и FBS, необходимых документах, ценообразовании и акциях, с бесплатной главой «Семь скрытых расходов на Ozon». В комплекте: калькулятор прибыли, таблица рекламы и акций, учёт остатков, план на 30 дней и шаблон самопроверки магазина.</p>
+    <div class="book reveal">
+      <a class="book-cover" href="assets/bay-khoan-chi-an-tren-ozon.pdf" target="_blank" rel="noopener">
+        <img src="assets/book-cover.jpg" alt="Bán hàng trên Ozon cho người Việt — Daniel Nguyễn" loading="lazy">
+      </a>
+      <div class="book-body">
+        <div class="eyebrow"><span data-l="en">Featured · Free guide · Volume 1</span><span data-l="vi">Nổi bật · Cẩm nang miễn phí · Tập 1</span><span data-l="ru">Главное · Бесплатное руководство · Том 1</span></div>
+        <h3>Bán hàng trên Ozon cho người Việt</h3>
+        <div class="book-sub"><span data-l="en">Selling on Ozon: a guide for Vietnamese sellers</span><span data-l="vi">Những gì tôi ước mình biết từ ngày đầu</span><span data-l="ru">Продажи на Ozon: руководство для вьетнамских продавцов</span></div>
+        <p data-l="en">A Vietnamese-language handbook compiled from Russian-language sources: the rules, the fees, advertising and day-to-day operations on Ozon. It comes with three ready-made Excel calculators (profit and loss, advertising and promotions, inventory), a store self-assessment template and a 30-day plan.</p>
+        <p data-l="vi">Cẩm nang tiếng Việt tổng hợp từ tài liệu tiếng Nga: luật chơi, chi phí, quảng cáo và vận hành trên Ozon. Kèm 3 bảng tính Excel có sẵn công thức (lãi lỗ, quảng cáo và khuyến mãi, tồn kho), mẫu tự đánh giá gian hàng và mẫu kế hoạch 30 ngày.</p>
+        <p data-l="ru">Руководство на вьетнамском языке, составленное по русскоязычным источникам: правила, комиссии, реклама и ежедневная работа на Ozon. В комплекте три готовые таблицы Excel (прибыль, реклама и акции, остатки), шаблон самопроверки магазина и план на 30 дней.</p>
+        <div class="book-facts">
+          <span><b>20</b> <span data-l="en">chapters</span><span data-l="vi">chương</span><span data-l="ru">глав</span></span>
+          <span><b>4</b> <span data-l="en">parts</span><span data-l="vi">phần</span><span data-l="ru">части</span></span>
+          <span><b>3</b> <span data-l="en">Excel tools</span><span data-l="vi">bảng tính Excel</span><span data-l="ru">таблицы Excel</span></span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="assets/bay-khoan-chi-an-tren-ozon.pdf" target="_blank" rel="noopener"><span data-l="en">Read a free chapter (PDF)</span><span data-l="vi">Đọc thử miễn phí (PDF)</span><span data-l="ru">Читать бесплатную главу (PDF)</span></a>
+          <a class="btn ghost" href="https://t.me/danielnguyen_sannga" target="_blank" rel="noopener"><span data-l="en">Get the full guide on Telegram</span><span data-l="vi">Nhận trọn bộ qua Telegram</span><span data-l="ru">Полная версия в Telegram</span></a>
+        </div>
+        <small class="book-note"><span data-l="en">Free sample: "Seven hidden costs on Ozon" (in Vietnamese)</span><span data-l="vi">Chương đọc thử: "Bảy khoản chi ẩn trên Ozon"</span><span data-l="ru">Бесплатная глава: «Семь скрытых расходов на Ozon» (на вьетнамском)</span></small>
+      </div>
     </div>
 
     <div class="card">
@@ -374,6 +506,16 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
   var nav = (navigator.language || 'en').slice(0,2);
   setLang(saved || (['vi','ru'].indexOf(nav) > -1 ? nav : 'en'));
   buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.set); }); });
+
+  // reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    root.classList.add('js');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function(el, i){ el.style.transitionDelay = (i % 5) * 70 + 'ms'; io.observe(el); });
+  }
 })();
 </script>
 </body>
